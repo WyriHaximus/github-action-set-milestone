@@ -1,0 +1,15 @@
+name: 'Close Milestone'
+description: 'Close the specified milestone'
+branding:
+  icon: 'stop-circle'
+  color: 'green'
+inputs:
+  milestone_number:
+    description: 'The milestone number as seen in the HTML URL'
+    required: true
+  issue_number:
+    description: 'The issue/PR number as seen in the HTML URL'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
