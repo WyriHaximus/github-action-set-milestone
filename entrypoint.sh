@@ -19,7 +19,6 @@ fi
 
 printf "\u001b[30;40m♫♪.ılılıll|̲̅̅●̲̅̅|̲̅̅=̲̅̅|̲̅̅●̲̅̅|%s|̲̅̅●̲̅̅|̲̅̅=̲̅̅|̲̅̅●̲̅̅|llılılı.♫♪\u001b[0m\n" "milestone"
 printf "\u001b[30;40m--------{---(@%s@}}>-----\u001b[0m\n" ${INPUT_MILESTONE_NUMBER}
-printf "\u001b[30;40mô¿ô%sô¿ô\u001b[0m\n" ${GITHUB_REPOSITORY}
 
 jq -nc \
 --arg milestone ${INPUT_MILESTONE_NUMBER} \
