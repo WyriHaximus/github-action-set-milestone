@@ -17,6 +17,9 @@ if [ $(echo ${INPUT_MILESTONE_NUMBER} | wc -c) -eq 1 ] ; then
   exit 1
 fi
 
+printf "\u001b[30;40m♫♪.ılılıll|̲̅̅●̲̅̅|̲̅̅=̲̅̅|̲̅̅●̲̅̅|%s|̲̅̅●̲̅̅|̲̅̅=̲̅̅|̲̅̅●̲̅̅|llılılı.♫♪\u001b[0m\n" "milestone"
+printf "\u001b[30;40m»-(¯`·.·´¯)->%s<-(¯`·.·´¯)-«\u001b[0m\n" ${INPUT_ISSUE_NUMBER}
+
 jq -nc \
 --arg milestone ${INPUT_MILESTONE_NUMBER} \
 '{
