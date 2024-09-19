@@ -1,5 +1,5 @@
-name: 'Close Milestone'
-description: 'Close the specified milestone'
+name: 'Set Milestone'
+description: 'Set specified milestone'
 branding:
   icon: 'stop-circle'
   color: 'green'
