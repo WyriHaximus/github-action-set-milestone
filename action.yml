@@ -1,15 +1,27 @@
-name: 'Set Milestone'
-description: 'Set specified milestone'
+name: Set Milestone
+description: Set specified milestone
 branding:
-  icon: 'stop-circle'
-  color: 'green'
+  icon: stop-circle
+  color: green
 inputs:
   milestone_number:
-    description: 'The milestone number as seen in the HTML URL'
+    description: The milestone number as seen in the HTML URL
     required: true
   issue_number:
-    description: 'The issue/PR number as seen in the HTML URL'
+    description: The issue/PR number as seen in the HTML URL
     required: true
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "composite"
+  steps:
+    - name: Set milestone on issue
+      uses: actions/github-script@v7
+      id: milestones
+      with:
+        retries: 13
+        script: |
+          (await github.rest.issues.update({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: ${{ inputs.issue_number }},
+            milestone: ${{ inputs.milestone_number }},
+          }));
